@@ -1,2 +1,26 @@
 .*
 !.gitignore
+
+# ===== 本仓库实验工作流补充 =====
+
+# Python 产物
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Harbor / 判分 / run.py 运行产物（bench/jobs、bench/runs 同样命中）
+jobs/
+runs/
+logs/
+outputs/
+
+# 实验结果快照（可由 runs/ 重新导出；如需入库，删除下面两行）
+predictions/
+no_context_*.json
+
+# 记忆库本地持久化（trivial 后端 JSONL store）
+mem.jsonl
+*.mem.jsonl
+memory-store/
