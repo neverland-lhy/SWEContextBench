@@ -1,0 +1,19 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "bench"
+version = "0.1.0"
+description = "SWE-ContextBench orchestrator: No-Context / Free Context / Free Summary across swappable memory backends, on Harbor."
+requires-python = ">=3.10"
+dependencies = [
+    "typer>=0.12",
+    "pyyaml>=6.0",
+]
+
+[project.scripts]
+bench = "bench.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/bench"]

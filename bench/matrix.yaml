@@ -1,0 +1,7 @@
+# Matrix run config. Adjust settings/backends/models to your experiment.
+settings: [no-context, free-context, free-summary]
+backends: [trivial]           # add mem0, custom once configured
+models:
+  anthropic/claude-sonnet-4-5:
+    agent: claude-code
+subset: lite

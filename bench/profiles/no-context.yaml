@@ -1,0 +1,14 @@
+# No-Context baseline: agent gets only the raw problem statement.
+# No memory plugin, no hooks, no MCP. This is the paper's No-Context arm.
+setting: no-context
+backend: trivial
+model: deepseek-v4-flash-0731
+agent: claude-code
+subset: lite
+concurrency: 5
+pull_timeout: 1800
+run_timeout: 2400
+retries: 2
+store_path: memory_store.jsonl
+ingest: false        # no-context has no memory to ingest
+eval: true

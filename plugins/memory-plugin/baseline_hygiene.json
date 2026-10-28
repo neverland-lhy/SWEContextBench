@@ -1,0 +1,17 @@
+{
+  "_comment": "Baseline hygiene applied to ALL settings incl. No-Context. NOT a plugin — pure settings.json config. Disables Claude's own memory + AskUserQuestion so runs are clean and non-interactive. Plus an empty CLAUDE_CONFIG_DIR at launch (orchestrator sets it).",
+  "permissions": {
+    "deny": [
+      "AskUserQuestion",
+      "Write(**/MEMORY.md)",
+      "Edit(**/MEMORY.md)",
+      "Write(**/CLAUDE.md)",
+      "Edit(**/CLAUDE.md)",
+      "Write(**/summary.md)",
+      "Edit(**/summary.md)",
+      "Write(**/.claude/projects/*/memory/**)",
+      "Edit(**/.claude/projects/*/memory/**)"
+    ]
+  },
+  "enableAllProjectMcpServers": false
+}

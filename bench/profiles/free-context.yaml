@@ -1,0 +1,15 @@
+# Free Context: full trajectory pool ingested into the trivial (BM25) backend.
+# Agent searches past experience before fixing; does NOT save (fixed pool,
+# matching the paper's Supermemory instruction "do not save the new issue").
+setting: free-context
+backend: trivial
+model: glm-5.2
+agent: claude-code
+subset: lite
+concurrency: 5
+pull_timeout: 1800
+run_timeout: 2400
+retries: 2
+store_path: memory_store.jsonl
+ingest: true         # ingest the 300 past-experience trajectories
+eval: true

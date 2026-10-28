@@ -1,0 +1,15 @@
+# Free Summary: gpt-4o-mini ~217-token summaries of the 300 trajectories,
+# ingested into the trivial backend. Same search-only instruction as Free
+# Context; only the stored pool differs (summaries vs raw transcripts).
+setting: free-summary
+backend: trivial
+model: glm-5.2
+agent: claude-code
+subset: lite
+concurrency: 5
+pull_timeout: 1800
+run_timeout: 2400
+retries: 2
+store_path: memory_store.jsonl
+ingest: true
+eval: true

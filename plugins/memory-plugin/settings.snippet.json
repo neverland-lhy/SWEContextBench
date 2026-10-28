@@ -1,0 +1,29 @@
+{
+  "_comment": "Merge into Harbor agent.kwargs.config (settings.json). The plugin MCP + hooks layer — ONLY mount in Free/Auto-inject settings. No-Context uses just baseline_hygiene.json.",
+  "mcpServers": {
+    "memory": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["memory-bridge", "serve-mcp", "--backend", "trivial", "--store-path", "/memory/memory_store.jsonl"],
+      "env": {}
+    }
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit|NotebookEdit",
+        "hooks": [
+          { "type": "command", "command": "/plugin/hooks/pretool_block_native_memory.sh" }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          { "type": "command", "command": "/plugin/hooks/session_start.sh" }
+        ]
+      }
+    ]
+  }
+}
